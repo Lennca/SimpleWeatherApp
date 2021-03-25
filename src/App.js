@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Axios from 'axios'
+import TemperatureFormatOption from './components/TemperatureFormatOption'
+import SearchForm from './components/SearchForm'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -44,45 +46,8 @@ function App() {
 			</div>
 
 			<div className='mb-3'>
-				<p className='m-0'>Display temp in: </p>
-				<div className='form-check form-check-inline mb-3' onChange={radioChange}>
-					<input
-						className='form-check-input'
-						type='radio'
-						name='inlineRadioOptions'
-						id='inlineRadio1'
-						value='celsius'
-						defaultChecked={unit === 'metric'}
-					/>
-					<label className='form-check-label mr-4' htmlFor='inlineRadio1'>
-						Celsius
-					</label>
-
-					<input
-						className='form-check-input'
-						type='radio'
-						name='inlineRadioOptions'
-						id='inlineRadio2'
-						value='fahrenheit'
-						defaultChecked={unit !== 'metric'}
-					/>
-					<label className='form-check-label' htmlFor='inlineRadio2'>
-						Fahrenheit
-					</label>
-				</div>
-
-				<form className='form-inline'>
-					<input
-						className='form-control mr-sm-2'
-						type='search'
-						placeholder='Search'
-						aria-label='Search'
-						onChange={changeInput}
-					/>
-					<button className='btn btn-outline-success my-2 my-sm-0' type='submit' onClick={fetchData}>
-						Search
-					</button>
-				</form>
+        <TemperatureFormatOption radioChange={radioChange} unit={unit} />
+        <SearchForm changeInput={changeInput} fetchData={fetchData} />
 			</div>
 
 			<div style={{ minWidth: '360px' }}>
