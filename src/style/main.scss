@@ -1,0 +1,57 @@
+
+$h2-font-size: 3.5rem;
+$full-height: 100%;
+$full-width: 100%;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+html, body, #root {
+  height: $full-height;
+  width: $full-width;
+}
+
+html, body, * {
+  margin: 0;
+}
+
+.background_container {
+  color: white;
+  background: linear-gradient(#226ba3de, #226ba359), url("../sky-1441936_1920.jpg");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: $full-height;
+  width: $full-width;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: $full-height;
+}
+
+.centered {
+  width: 100%;
+}
+
+@include media-breakpoint-up(md) {
+  .centered {
+    width: 50%;
+  }
+
+}
+
+
+p {
+  font-size: 24px;
+}
+
+label {
+  font-size: 24px;
+}
+
+h2, .h2 {
+  font-size: $h2-font-size;
+}

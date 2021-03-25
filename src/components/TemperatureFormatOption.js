@@ -2,9 +2,9 @@ import React from 'react';
 
 function TemperatureFormatOption({ radioChange, unit }) {
   return (
-    <div>
-      	<p className='m-0'>Display temp in: </p>
-				<div className='form-check form-check-inline mb-3' onChange={radioChange}>
+    <div className="d-flex flex-column flex-md-row">
+      	<p className='m-0 mr-3'>Display temp in: </p>
+				<div className='form-check form-check-inline' onChange={radioChange}>
 					<input
 						className='form-check-input'
 						type='radio'
@@ -13,7 +13,7 @@ function TemperatureFormatOption({ radioChange, unit }) {
 						value='celsius'
 						defaultChecked={unit === 'metric'}
 					/>
-					<label className='form-check-label mr-4' htmlFor='inlineRadio1'>
+					<label className='form-check-label mr-3' htmlFor='inlineRadio1'>
 						Celsius
 					</label>
 

@@ -12,23 +12,23 @@ function ResultComponent({ data, unit }) {
   const { speed, deg } = data.wind
 
   return (
-    <div style={{ minWidth: '360px' }}>
-			<h3>{name}</h3>
-			<h3>
-				{temp} {unit === 'metric' ? cUnicode : fUnicode}
-				<span>
-					(Feels like: {data !== undefined && feels_like}
-					{unit === 'metric' ? cUnicode : fUnicode})
-				</span>
-			</h3>
+    <div className="centered d-flex flex-column align-items-center">
+			<h2>{name}</h2>
+      <div className="d-flex flex-column">
+        <h2 className="mr-3" style={{fontSize: '8rem'}}>
+          {temp} <span style={{fontSize: '2rem'}}>{unit === 'metric' ? cUnicode : fUnicode}</span>
+        </h2>
+      </div>
+      <h3>
+        (Feels like: {data !== undefined && feels_like}
+        {unit === 'metric' ? cUnicode : fUnicode})
+      </h3>
 
 			<p>{main}, {description}</p>
-			<span>Lat: {lat} Lng: {lon}</span>
+			<p>Lat: {lat} Lng: {lon}</p>
 
-			<div>
-				<WindDirectionIcon deg={deg} />
-				<span>{speed} {unit === 'metric' ? 'm/s' : 'mph'}</span>
-			</div>
+      <p><span><WindDirectionIcon deg={deg}/></span>{speed} {unit === 'metric' ? 'm/s' : 'mph'}</p>
+
 		</div>
   );
 }

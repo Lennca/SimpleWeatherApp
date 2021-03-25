@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './App.css'
 import Axios from 'axios'
 import TemperatureFormatOption from './components/TemperatureFormatOption'
 import SearchForm from './components/SearchForm'
@@ -45,18 +44,15 @@ function App() {
 	return (
 		<div className='background_container'>
 			<div className="container">
-        <div className='h-25 d-flex jusitfy-content-center align-items-center '>
-          <h1 style={{fontSize: '3rem'}}>Weather App</h1>
-        </div>
-
-        <div className='mb-3'>
-          <TemperatureFormatOption radioChange={radioChange} unit={unit} />
+        <div className="w-100" style={{height: '240px'}}>
           <SearchForm changeInput={changeInput} fetchData={fetchData} />
+          <TemperatureFormatOption radioChange={radioChange} unit={unit} />
         </div>
-
+        <div className="w-100 d-flex justify-content-center">
         {tempMetric !== undefined && tempImperial !== undefined && (
           <ResultComponent data={unit === metric ? tempMetric : tempImperial} unit={unit} />
         )}
+        </div>
       </div>
 		</div>
 	)

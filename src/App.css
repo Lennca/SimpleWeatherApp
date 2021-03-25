@@ -1,18 +1,2 @@
-.background_container {
-  color: white;
-  font-size: 20px;
-  background: linear-gradient(#226ba3de, #226ba359), url("./sky-1441936_1920.jpg");
-/*   background-image: url("./sky-1441936_1920.jpg");
- */  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-}
 
-.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-}
+
