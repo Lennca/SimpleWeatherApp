@@ -10,7 +10,7 @@ function SearchForm({ changeInput, fetchData }) {
         aria-label='Search'
         onChange={changeInput}
       />
-      <button className='btn btn-outline-success my-2 my-sm-0' type='submit' onClick={fetchData}>
+      <button className='btn btn-success my-2 my-sm-0' type='submit' onClick={fetchData}>
         Search
       </button>
     </form>
