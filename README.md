@@ -23,7 +23,7 @@ Make sure to have the following installed:
   ```sh
   git clone https://github.com/Lennca/SimpleWeatherApp.git
   ```
-3. Install NPM packages
+3. Install NPM packages (in both `/frontend`, `/backend`, and `/`)
   ```sh
   npm install
   ```
@@ -31,7 +31,11 @@ Make sure to have the following installed:
   ```JS
   WEATHER_API_KEY=<YOUR_API_KEY>
   ```
-5. Start the application
+5. Create React chunk files (run following in `/frontend`)
+  ```JS
+  npm run build
+  ```
+6. Start the application
   ```JS
   npm start
   ```
