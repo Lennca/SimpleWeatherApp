@@ -1,33 +1,13 @@
 import React from 'react';
+import RadioButton from './Inputs/RadioButton';
 
-function TemperatureFormatOption({ radioChange, unit }) {
+function TemperatureFormatOption({ radioChange, selectedUnit, metric, imperial }) {
   return (
-    <div className="d-flex flex-column flex-md-row">
-      	<p className='m-0 mr-3'>Display temp in: </p>
-				<div className='form-check form-check-inline' onChange={radioChange}>
-					<input
-						className='form-check-input'
-						type='radio'
-						name='inlineRadioOptions'
-						id='inlineRadio1'
-						value='celsius'
-						defaultChecked={unit === 'metric'}
-					/>
-					<label className='form-check-label mr-3' htmlFor='inlineRadio1'>
-						Celsius
-					</label>
-
-					<input
-						className='form-check-input'
-						type='radio'
-						name='inlineRadioOptions'
-						id='inlineRadio2'
-						value='fahrenheit'
-						defaultChecked={unit !== 'metric'}
-					/>
-					<label className='form-check-label' htmlFor='inlineRadio2'>
-						Fahrenheit
-					</label>
+    <div id="temperature-format-option-component" className="d-flex flex-column flex-md-row">
+      	<p className='m-0 mr-3'>Display temperature in: </p>
+				<div className='form-check form-check-inline'>
+        <RadioButton unit={metric} selectedUnit={selectedUnit} radioChange={radioChange} />
+        <RadioButton unit={imperial} selectedUnit={selectedUnit} radioChange={radioChange} />
 				</div>
     </div>
   );

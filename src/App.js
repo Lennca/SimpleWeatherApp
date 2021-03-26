@@ -11,12 +11,12 @@ function App() {
   const imperial = 'imperial'
 
 	const [city, setCity] = useState('')
-	const [unit, setUnit] = useState(metric)
+	const [selectedUnit, setselectedUnit] = useState(metric)
   const [tempMetric, setTempMetric] = useState(undefined)
   const [tempImperial, setTempImperial] = useState(undefined)
 
 	const changeInput = (e) => setCity(e.target.value)
-	const radioChange = (e) => setUnit(e.target.value === 'celsius' ? metric : imperial)
+	const radioChange = (e) => setselectedUnit(e.target.value === 'celsius' ? metric : imperial)
 
   async function fetch(unit) {
     const response = await Axios.get(
@@ -44,13 +44,13 @@ function App() {
 	return (
 		<div className='background_container'>
 			<div className="container">
-        <div className="w-100" style={{height: '240px'}}>
+        <div className="section-search">
           <SearchForm changeInput={changeInput} fetchData={fetchData} />
-          <TemperatureFormatOption radioChange={radioChange} unit={unit} />
+          <TemperatureFormatOption metric={metric} imperial={imperial} radioChange={radioChange} selectedUnit={selectedUnit} />
         </div>
-        <div className="w-100 d-flex justify-content-center">
+        <div className="section-result">
         {tempMetric !== undefined && tempImperial !== undefined && (
-          <ResultComponent data={unit === metric ? tempMetric : tempImperial} unit={unit} />
+          <ResultComponent data={selectedUnit === metric ? tempMetric : tempImperial} selectedUnit={selectedUnit} />
         )}
         </div>
       </div>

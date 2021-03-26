@@ -2,10 +2,9 @@ import React from 'react';
 
 function SearchForm({ changeInput, fetchData }) {
   return (
-    <form className='form-inline w-100 my-3'>
+    <form id="search-form-component" className='form-inline my-3'>
       <input
-        className='form-control-lg mr-2'
-        style={{flex: '1', width: '75%'}}
+        className='form-control-lg mr-2 input-search'
         type='search'
         placeholder='Search'
         aria-label='Search'

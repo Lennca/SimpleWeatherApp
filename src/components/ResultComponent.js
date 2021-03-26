@@ -1,9 +1,13 @@
 import React from 'react';
 import WindDirectionIcon from './WindDirectionIcon';
 
-function ResultComponent({ data, unit }) {
+function ResultComponent({ data, selectedUnit }) {
   const cUnicode = `\u2103`
 	const fUnicode = `\u2109`
+
+  const unitOfSpeed = selectedUnit === 'metric' ? 'm/s' : 'mph'
+  const unitOfTemp = selectedUnit === 'metric' ? cUnicode : fUnicode
+
 
   const { name } = data
   const { temp, feels_like } = data.main
@@ -12,22 +16,15 @@ function ResultComponent({ data, unit }) {
   const { speed, deg } = data.wind
 
   return (
-    <div className="centered d-flex flex-column align-items-center">
+    <div id="result-component">
 			<h2>{name}</h2>
-      <div className="d-flex flex-column">
-        <h2 className="mr-3" style={{fontSize: '8rem'}}>
-          {temp} <span style={{fontSize: '2rem'}}>{unit === 'metric' ? cUnicode : fUnicode}</span>
-        </h2>
-      </div>
-      <h3>
-        (Feels like: {data !== undefined && feels_like}
-        {unit === 'metric' ? cUnicode : fUnicode})
-      </h3>
+      <h2 id="temperature"> {temp} <span id="unicodeTag">{selectedUnit === 'metric' ? cUnicode : fUnicode}</span> </h2>
+      <h3>(Feels like: {data !== undefined && feels_like}{unitOfTemp})</h3>
 
 			<p>{main}, {description}</p>
 			<p>Lat: {lat} Lng: {lon}</p>
 
-      <p><span><WindDirectionIcon deg={deg}/></span>{speed} {unit === 'metric' ? 'm/s' : 'mph'}</p>
+      <p><span><WindDirectionIcon deg={deg}/></span>{speed} {unitOfSpeed}</p>
 
 		</div>
   );
