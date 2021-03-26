@@ -21,7 +21,7 @@ Make sure to have the following installed:
 1. Sign up and get a free API Key at [Open Weather Map](https://openweathermap.org/)
 2. Clone the repo
   ```sh
-  git clone https://github.com/Lennca/React_weather_app.git
+  git clone https://github.com/Lennca/SimpleWeatherApp.git
   ```
 3. Install NPM packages
   ```sh
