@@ -4,8 +4,6 @@ import TemperatureFormatOption from './components/TemperatureFormatOption'
 import SearchForm from './components/SearchForm'
 import ResultComponent from './components/ResultComponent'
 
-const API_KEY = process.env.REACT_APP_API_KEY
-
 function App() {
   const metric = 'metric'
   const imperial = 'imperial'
@@ -18,10 +16,9 @@ function App() {
 	const changeInput = (e) => setCity(e.target.value)
 	const radioChange = (e) => setselectedUnit(e.target.value === 'celsius' ? metric : imperial)
 
-  async function fetch(unit) {
-    const response = await Axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${API_KEY}`
-    )
+  async function fetch(city, unit) {
+    const url = `http://localhost:3001/api/weather/${city}/${unit}`
+    const response = await Axios.get(url)
     return response
   }
 
@@ -32,10 +29,14 @@ function App() {
     if(city === undefined || city == null || city.trim().length < 1) return
 
     try {
-      const result = await Promise.all([fetch(metric), fetch(imperial)])
+      const result = await Promise.all([fetch(city, metric), fetch(city, imperial)])
 
-      setTempMetric(result[0].data)
-      setTempImperial(result[1].data)
+      if(result[0].status === 200 && result[1].status === 200) {
+        setTempMetric(result[0].data)
+        setTempImperial(result[1].data)
+      } else {
+        throw new Error('Status code indicate on invalid response!')
+      }
     } catch (error) {
       console.log('Error! Could not fetch.', error.message)
     }
