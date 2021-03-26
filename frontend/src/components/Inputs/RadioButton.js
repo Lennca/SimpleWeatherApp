@@ -14,9 +14,7 @@ function RadioButton({unit, selectedUnit, radioChange, type}) {
 				checked={selectedUnit === unit}
         onChange={radioChange}
       />
-			<label className='form-check-label mr-3' htmlFor={name}>
-				{translateUnit}
-			</label>
+			<label className='form-check-label mr-3' htmlFor={name}>{translateUnit}</label>
     </div>
   );
 }
