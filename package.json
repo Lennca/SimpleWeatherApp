@@ -4,17 +4,22 @@
   "description": "Simple React weather app fetching data from api.",
   "main": "index.js",
   "scripts": {
-    "start": "cd ./frontend && npm run build && cd ../backend && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "concurrently \"cd ./frontend && npm install\" \"cd ./backend && npm install\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"Error: no lint specified\" && exit 1",
+    "start": "concurrently \"cd /frontend && npm start\" \"cd /backend && npm start\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lennca/React_weather_app.git"
   },
-  "author": "",
+  "author": "Caesar Lennartsson",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Lennca/React_weather_app/issues"
   },
-  "homepage": "https://github.com/Lennca/React_weather_app#readme"
+  "homepage": "https://github.com/Lennca/React_weather_app#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  }
 }
