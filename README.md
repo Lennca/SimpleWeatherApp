@@ -23,7 +23,7 @@ Make sure to have the following installed:
   ```sh
   git clone https://github.com/Lennca/SimpleWeatherApp.git
   ```
-3. Install NPM packages (in both `/frontend`, `/backend`, and `/`)
+3. Install NPM packages
   ```sh
   npm install
   ```
@@ -31,11 +31,7 @@ Make sure to have the following installed:
   ```JS
   WEATHER_API_KEY=<YOUR_API_KEY>
   ```
-5. Create React chunk files (run following in `/frontend`)
-  ```JS
-  npm run build
-  ```
-6. Start the application
+5. Start the application
   ```JS
   npm start
   ```
@@ -49,15 +45,14 @@ The application display the data:
 * Location
 * Feel like temperature
 * Description of weather
-* Location (latitude and longitude) of place entered
+* Location (latitude and longitude)
 * Wind-speed
 * Wind-direction
 
-
 ### Screenshots
 
-![Screenshot of demo app in desktop-view](./readme_desktop.png)
-![Screenshot of demo app in mobile-view](./readme_mobile.png)
+![Screenshot of demo app in desktop-view](./desktop_demo.png)
+![Screenshot of demo app in mobile-view](./mobile_demo.png)
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.

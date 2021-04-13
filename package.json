@@ -7,7 +7,7 @@
     "postinstall": "concurrently \"cd ./frontend && npm install\" \"cd ./backend && npm install\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "echo \"Error: no lint specified\" && exit 1",
-    "start": "concurrently \"cd /frontend && npm start\" \"cd /backend && npm start\""
+    "start": "concurrently \"cd ./frontend && npm start\" \"cd ./backend && npm start\""
   },
   "repository": {
     "type": "git",
