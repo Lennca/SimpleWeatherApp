@@ -17,7 +17,7 @@ function App() {
 	const radioChange = (e) => setselectedUnit(e.target.value === 'celsius' ? metric : imperial)
 
   async function fetch(city, unit) {
-    const url = `http://localhost:3001/api/weather/${city}/${unit}`
+    const url = `http://localhost:5000/api/weather/${city}/${unit}`
     const response = await Axios.get(url)
     return response
   }
