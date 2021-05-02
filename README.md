@@ -3,7 +3,7 @@
 ## About
 This is a simple weather application fetching data from [Open Weather Map](https://openweathermap.org/).
 
-The application is built using React on the client-side and Node.js and Express for the simple server-side part of the application.
+The application is built using React on the client-side and Node.js + Express for the server-side part of the application.
 
 API: [Open Weather Map](https://openweathermap.org/)
 
@@ -32,9 +32,41 @@ Make sure to have the following installed:
   WEATHER_API_KEY=<YOUR_API_KEY>
   ```
 5. Start the application
-  ```JS
+  ```sh
   npm start
   ```
+
+<!-- Deploy -->
+## Deploy (using Docker)
+
+### Prerequisites
+
+Make sure to have the following installed:
+
+* [Docker](https://docs.docker.com/get-docker/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Environment Variables
+
+* `WEATHER_API_KEY` - Private API-key retrieved from [Open Weather Map](https://openweathermap.org/)
+
+### Build, run, and deploy containers
+
+1. Sign up and get a free API Key at [Open Weather Map](https://openweathermap.org/)
+2. Clone the repo
+  ```sh
+  git clone https://github.com/Lennca/SimpleWeatherApp.git
+  ```
+3. Replace `<API-KEY>` under `services -> backend -> environment` in the `docker-compose.yml`-file
+4. Build images and start containers
+  ```sh
+  docker-compose up -d
+  ```
+5. Verify that the containers are up
+  ```sh
+  docker ps
+  ```
+6. Application is now up and running at [localhost](http://localhost:3000) on port 3000
 
 ## Usage
 
